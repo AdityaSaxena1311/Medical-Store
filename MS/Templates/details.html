@@ -1,0 +1,245 @@
+{% load static %} {% static "" as baseurl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Customer's Details</title>
+
+    <!-- Favicons -->
+    <link href="{{baseurl}}img/favicon.png" rel="icon">
+    <link href="{{baseurl}}img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{baseurl}}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="{{baseurl}}lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{baseurl}}css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="{{baseurl}}lib/gritter/css/jquery.gritter.css" />
+    <!-- Custom styles for this template -->
+    <link href="{{baseurl}}css/style.css" rel="stylesheet">
+    <link href="{{baseurl}}css/style-responsive.css" rel="stylesheet">
+    <script src="{{baseurl}}lib/chart-master/Chart.js"></script>
+
+    <style>
+        table.ed tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        table.ed th {
+            background-color: #212529;
+            padding: 10px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <!--logo start-->
+            <a href="#" class="logo"><b>MEDICAL<span>STORE</span></b></a>
+            <!--logo end-->
+
+            <div class="top-menu">
+                <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="ms">Logout</a></li>
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <p class="centered">
+                        <img src="{{baseurl}}img/images.png" class="img-circle" width="80">
+                    </p>
+                    <h5 class="centered">Admin</h5>
+                    <li class="mt">
+                        <a class="active" href="#">
+                            <span>Customer's Details</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <br> {% if l %}
+                    <center>
+                        <h2><u>Customer's Details</u></h2>
+                    </center>
+                    <br><br>
+                    <center>
+                        <table class="ed" width="80%">
+                            <tr>
+                                <th>
+                                    <center>S.No.</center>
+                                </th>
+                                <th>
+                                    <center>Name</center>
+                                </th>
+                                <th>
+                                    <center>Price/Item</center>
+                                </th>
+                                <th>
+                                    <center>Quantity</center>
+                                </th>
+                                <th>
+                                    <center>Total</center>
+                                </th>
+                            </tr>
+                            {% for i in l %}
+                            <tr>
+                                <td>
+                                    <center>{{i.0}}</center>
+                                </td>
+                                <td>
+                                    <center>{{i.1}}</center>
+                                </td>
+                                <td>
+                                    <center>{{i.2}}</center>
+                                </td>
+                                <td>
+                                    <center>{{i.3}}</center>
+                                </td>
+                                <td>
+                                    <center>{{i.4}}</center>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <br><br><br>
+                        <table width="80%">
+                            <tr>
+                                <td width="70%"></td>
+                                <th width="18%" align="right">Grand Total:</th>
+                                <td>
+                                    <center>{{gt}}</center>
+                                </td>
+                            </tr>
+                        </table>
+                        <br><br><br>
+                        <form action="Bill">
+                            <table>
+                                <tr>
+                                    <td>Customer's Name &nbsp;</td>
+                                    <td><input type="text" name="name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Customer Phone Number's &nbsp;</td>
+                                    <td><input type="text" name="phno"></td>
+                                </tr>
+                                <tr>
+                                    <td>Date &nbsp;</td>
+                                    <td><input type="text" value="{{date}}" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td><br></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="Generate a Bill"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </center>
+                    {% else %}
+                    <center>
+                        <h4>{{cm}}</h4>
+                        <br><br><br>
+                        <a href="back">
+                            <font color="grey">
+                                <h5><u>Back</u></h5>
+                            </font>
+                        </a>
+                    </center>
+                    {% endif %}
+
+                </div>
+                <!-- /row -->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{{baseurl}}lib/jquery/jquery.min.js"></script>
+
+    <script src="{{baseurl}}lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="{{baseurl}}lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="{{baseurl}}lib/jquery.scrollTo.min.js"></script>
+    <script src="{{baseurl}}lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="{{baseurl}}lib/jquery.sparkline.js"></script>
+    <!--common script for all pages-->
+    <script src="{{baseurl}}lib/common-scripts.js"></script>
+    <script type="text/javascript" src="{{baseurl}}lib/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="{{baseurl}}lib/gritter-conf.js"></script>
+    <!--script for this page-->
+    <script src="{{baseurl}}lib/sparkline-chart.js"></script>
+    <script src="{{baseurl}}lib/zabuto_calendar.js"></script>
+
+    <script type="application/javascript">
+        $(document).ready(function() {
+            $("#date-popover").popover({
+                html: true,
+                trigger: "manual"
+            });
+            $("#date-popover").hide();
+            $("#date-popover").click(function(e) {
+                $(this).hide();
+            });
+
+            $("#my-calendar").zabuto_calendar({
+                action: function() {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function() {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [{
+                    type: "text",
+                    label: "Special event",
+                    badge: "00"
+                }, {
+                    type: "block",
+                    label: "Regular event",
+                }]
+            });
+        });
+
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+</body>
+
+</html>

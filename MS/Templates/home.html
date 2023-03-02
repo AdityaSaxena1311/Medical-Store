@@ -1,0 +1,71 @@
+{% load static %} {% static "" as baseurl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Medical Store</title>
+
+    <!-- Favicons -->
+    <link href="{{baseurl}}img/favicon.png" rel="icon">
+    <link href="{{baseurl}}img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{baseurl}}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="{{baseurl}}lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{{baseurl}}css/style.css" rel="stylesheet">
+    <link href="{{baseurl}}css/style-responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="login-page">
+        <div class="container">
+            <form class="form-login" action="login" method="post">
+                {% csrf_token %}
+                <br>
+                <h1>
+                    <center>Medical Store</center>
+                </h1>
+                <br>
+
+                <h2 class="form-login-heading">
+                    <center>Sign In</center>
+                </h2>
+                <div class="login-wrap">
+                    <input type="text" class="form-control" placeholder="Admin" readonly>
+                    <br>
+                    <input type="password" class="form-control" placeholder="Password" name="pass">
+                    </span>
+                    </label>
+                    <br><br>
+                    <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button><br>
+                    <center>{{err}}</center>
+
+                </div>
+        </div>
+        <!-- modal -->
+        </form>
+    </div>
+    </div>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{{baseurl}}lib/jquery/jquery.min.js"></script>
+    <script src="{{baseurl}}lib/bootstrap/js/bootstrap.min.js"></script>
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="{{baseurl}}lib/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("{{baseurl}}img/login-bg.jpg", {
+            speed: 500
+        });
+    </script>
+</body>
+
+</html>
