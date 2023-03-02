@@ -26,3 +26,11 @@ Type the following command in your Web Browser
 ```bash
   localhost:8000/ms
 ```
+## Screenshot 
+
+![Screenshot 2023-03-02 234126](https://user-images.githubusercontent.com/80876781/222517781-e311e6a9-d432-4885-92e1-e8075219f3ef.png)
+![Screenshot 2023-03-02 234242](https://user-images.githubusercontent.com/80876781/222517795-00a133a0-b456-4fc3-8f24-0123344cb161.png)
+![Screenshot 2023-03-02 234326](https://user-images.githubusercontent.com/80876781/222517813-a74839fe-0a97-45af-9cf5-e24a34eb2681.png)
+![Screenshot 2023-03-02 234358](https://user-images.githubusercontent.com/80876781/222517848-7e8dc0a9-585b-44c4-8d71-63b115115d53.png)
+![Screenshot 2023-03-02 234416](https://user-images.githubusercontent.com/80876781/222517873-540dd4db-5114-4134-9648-b0e5614574c8.png)
+
